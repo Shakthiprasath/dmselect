@@ -1,0 +1,11 @@
+<div id="select">
+    <span #label_select class="select-label" (click)="showDropDown()">{{defaultvalue}}</span>
+    <div class="dropdown-panel" *ngIf="showDown" [@animationOption2]="showDown">
+        <div class="menu-list" #dropdown>
+            <div class="menu-item" [ngClass]="{'letter-block':letter == 'true'}" *ngFor="let value of values" (click)="optionClick($event, value)">
+                {{value}}
+                <span class="letter-text" *ngIf="letter == 'true'">{{value.charAt(0)}}</span>
+            </div>
+        </div>
+    </div>
+</div>

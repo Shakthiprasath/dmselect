@@ -130,6 +130,76 @@
           }
         }
       }
+    },
+    "tesingLib": {
+      "root": "projects/tesing-lib",
+      "sourceRoot": "projects/tesing-lib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tesing-lib/tsconfig.lib.json",
+            "project": "projects/tesing-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tesing-lib/src/test.ts",
+            "tsConfig": "projects/tesing-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/tesing-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tesing-lib/tsconfig.lib.json",
+              "projects/tesing-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "dmSelect": {
+      "root": "projects/dm-select",
+      "sourceRoot": "projects/dm-select/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dm-select/tsconfig.lib.json",
+            "project": "projects/dm-select/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dm-select/src/test.ts",
+            "tsConfig": "projects/dm-select/tsconfig.spec.json",
+            "karmaConfig": "projects/dm-select/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dm-select/tsconfig.lib.json",
+              "projects/dm-select/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "libary"
